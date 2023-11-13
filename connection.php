@@ -16,12 +16,12 @@ if ($conn->connect_error) {
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $street = $_POST['street'];
     $street_nb= $_POST['street_nb'];
-    $typ = $_POST['type'];
+    $type = $_POST['type'];
     $city = $_POST['city'];
     $zipcode = $_POST['zipcode'];
 
     // Insert data into the database
-    $sql =("INSERT INTO adress(street, street_nb, type, city,zipcode) VALUES ('$street', '$street_nb', '$typ', '$city', '$zipcode')");
+    $sql =("INSERT INTO adress(street, street_nb, type, city,zipcode) VALUES ('$street', '$street_nb', '$type', '$city', '$zipcode')");
 
     if ($conn->query($sql) === TRUE) {
         echo "Item added successfully to the database";
