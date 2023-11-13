@@ -9,7 +9,7 @@
 <body>
     <form action="connection.php" method="post">
         <?php 
-            //$num_addresses=1;
+            
             $num_addresses = $_POST['num_addresses'];
             for ($i = 1; $i <= $num_addresses; $i++): ?>
             <h2>Adresse  <?php echo $i; ?></h2>

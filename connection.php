@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $type = $_POST['type'];
     $city = $_POST['city'];
     $zipcode = $_POST['zipcode'];
-
+     
     // Insert data into the database
     $sql =("INSERT INTO adress(street, street_nb, type, city,zipcode) VALUES ('$street', '$street_nb', '$type', '$city', '$zipcode')");
 
