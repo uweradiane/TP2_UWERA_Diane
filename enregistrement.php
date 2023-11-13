@@ -9,18 +9,17 @@
 <body>
     <form action="connection.php" method="post">
         <?php 
-            
             $num_addresses = $_POST['num_addresses'];
             for ($i = 1; $i <= $num_addresses; $i++): ?>
             <h2>Adresse  <?php echo $i; ?></h2>
-            <label for="street">Street:</label>
-            <input type="text" name="street">
+            <label for="street">street:</label>
+            <input type="text" name="street " id="street">
 
             <label for="street_nb<">Street Number:</label>
             <input type="number" name="street_nb">
 
             <label for="type">Type:</label>
-            <select name="type" id="typ">
+            <select name="type" id="type">
                 <option value="livraison">Livraison</option>
                 <option value="facturation">Facturation</option>
                 <option value="autre">Autre</option>
@@ -37,7 +36,6 @@
             <label for="zipcode">zipcode:</label>
             <input type="text" name="zipcode">
         <?php endfor;?>
-
         <button type="submit">Soumetre</button>
     </form>
 </body>
