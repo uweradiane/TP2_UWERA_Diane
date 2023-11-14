@@ -8,10 +8,12 @@
 </head>
 <body>
     <form action="connection.php" method="post">
+    <h1> ADDRESSES</h1>
         <?php 
             $num_addresses = $_POST['num_addresses'];
             for ($i = 1; $i <= $num_addresses; $i++): ?>
-            <h2>Adresse  <?php echo $i; ?></h2>
+            <fieldset>
+            <legend><b>Adresse<b>  <?php echo $i; ?></legend>
             <label for="street">street:</label>
             <input type="text" name="street">
             <label for="street_nb">Street Number:</label>
@@ -32,6 +34,7 @@
 
             <label for="zipcode">zipcode:</label>
             <input type="text" name="zipcode">
+            </fieldset>
         <?php endfor;?>
         <button type="submit">Soumetre</button>
     </form>
