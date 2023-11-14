@@ -13,18 +13,15 @@
             for ($i = 1; $i <= $num_addresses; $i++): ?>
             <h2>Adresse  <?php echo $i; ?></h2>
             <label for="street">street:</label>
-            <input type="text" name="street " id="street">
-
-            <label for="street_nb<">Street Number:</label>
+            <input type="text" name="street">
+            <label for="street_nb">Street Number:</label>
             <input type="number" name="street_nb">
-
             <label for="type">Type:</label>
             <select name="type" id="type">
                 <option value="livraison">Livraison</option>
                 <option value="facturation">Facturation</option>
                 <option value="autre">Autre</option>
             </select>
-
             <label for="city">City:</label>
             <select name="city">
                 <option value="Montreal">Montreal</option>

@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $sql =("INSERT INTO adress(street, street_nb, type, city,zipcode) VALUES ('$street', '$street_nb', '$type', '$city', '$zipcode')");
 
     if ($conn->query($sql) === TRUE) {
-        echo "Item added successfully to the database";
+        echo "Adress added successfully to the database";
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
