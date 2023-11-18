@@ -1,4 +1,5 @@
 <?php
+//Afficher les information des adresses
 var_dump($_POST);
 function createrAddress(){
 for($i =1; $i<=$_POST["num_Addresses"];$i++){
