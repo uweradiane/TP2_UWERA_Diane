@@ -1,20 +1,20 @@
 <?php
 // Create connection
-$test='';
-$servername = "localhost";
-$username = "root";
-$password = "";
+$test="";
+$server = "localhost";
+$user = "root";
+$pwd = "";
 $dbname = "ecom1_tp2";
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-// Check connection
+$conn = mysqli_connect($server, $user, $pwd, $dbname);
+
 if ($conn) {
     echo "Connected to the $dbname database successfully";
     global $conn;
     session_start();
-    $_SESSION['connexion']= $conn;
+    $_SESSION['connection']= $conn;
 } else {
-    echo "Error : Not connected to the $db database";
+    echo "Error : Not connected to the $dbname database";
 }
 ?> 
-<form method="post" action="usercrud.php">
+<form method="post" action="validation.php">
 <button type="submit">Confirm</button>

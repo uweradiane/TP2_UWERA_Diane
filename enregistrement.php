@@ -12,8 +12,9 @@
         <?php 
         session_start();
             $iMax =$_POST["num_addresses"];
-            $num_addresses = $_POST['num_addresses'];
-            for ($i = 1; $i <= $num_addresses; $i++):?>
+
+            //form which permit to save a new user in adress fonction
+            for ($i = 1; $i <= $iMax; $i++):?>
             <fieldset>
             <legend><b>Adresse<b>  <?php echo $i; ?></legend>
             <label for="street">street:</label>
@@ -36,7 +37,11 @@
             <label for="zipcode<?php echo$i?>">zipcode:</label>
             <input type="text" name="zipcode<?php echo$i?>" id="zipcode<?php echo$i?>">
             </fieldset>
-        <?php endfor;?>
+        <?php endfor;
+        ?>
+        <?php
+           
+        ?>
         <button type="submit">Soumetre</button>
     </form>
 </body>

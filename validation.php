@@ -1,36 +1,22 @@
 <?php
-//ajouter ladresse a la base de donner
- function createAddress($data) {
-    global $conn;
-    $query="INSERT INTO address VALUES (NULL,?,?,?,?,?)";
-    If( $stmt=mysqli_prepare($conn, $query)){
-    /* Lecture des marqueurs */
-    mysqli_stmt_bind_param($stmt,"sssss",$data['street'],$data['street_nb'],$data['type'],$data['city'],$data['zipcode']);
-    /* Exécution de la requête*/
-    $result= mysqli_stmt_execute($stmt);
-    echo "<br> <br>";
-    echo"ADRESSE AJOUTE";
-    echo "<br> <br>";
-    var_dump($result);
-    return $result;
-        }
-        };
- 
- 
-// but: utiliser cette fonction pour pouvoir valider ladresse dans validations.php
-function getUserByTypeAndZipCode($type,$zipcode)
-{
-    global $conn;
- 
-    $query = "SELECT * FROM address WHERE type = '" . $type . "' AND zipcode = '" . $zipcode . "';";
- 
-    //var_dump($query);
-    $result = mysqli_query($conn, $query);
- 
-        // avec fetch row : tableau indexé
-        $data = mysqli_fetch_assoc($result);
-        return $data;
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $_data = $_post[($street = $_POST['street'],
+    $street_nb= $_POST['street_nb'],
+    $type = $_POST['type'],
+    $city = $_POST['city'];
+    $zipcode = $_POST['zipcode'])];
+     
+    // Insert data into the database
+    $sql =("INSERT INTO adress(street, street_nb, type, city,zipcode) VALUES ('$street', '$street_nb', '$type', '$city', '$zipcode')");
+
+    if ($conn->query($sql) === TRUE) {
+        echo "Adress added successfully to the database";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
 }
- 
- 
-?>
+
+// Close the connection
+$conn->close();
+?> 
